@@ -16,15 +16,15 @@ class GetStoresByCity implements UseCase<List<Store>, Params> {
 
   @override
   Future<Either<Failure, List<Store>>> call(Params params) async {
-    final stores = await repository.findByCity(params.city);
-    return stores.fold((failure) => Left(failure), (stores) {
-      // TODO: the repository should handle this... or refactor test to allow empty list?
-      if (stores.isEmpty) {
-        return Left(NoStoresFoundFailure());
-      } else {
-        return Right(stores);
-      }
-    });
+    return await repository.findByCity(params.city);
+    // return stores.fold((failure) => Left(failure), (stores) {
+    //   // TODO: the repository should handle this... or refactor test to allow empty list?
+    //   if (stores.isEmpty) {
+    //     return Left(NoStoresFoundFailure());
+    //   } else {
+    //     return Right(stores);
+    //   }
+    // });
   }
 }
 

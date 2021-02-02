@@ -6,8 +6,3 @@ class UnknownFailure extends Failure {
   @override
   List<Object> get props => [];
 }
-
-class NoStoresFoundFailure extends Failure {
-  @override
-  List<Object> get props => [];
-}

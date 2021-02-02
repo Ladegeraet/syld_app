@@ -1,7 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:syld_app/core/domain/failure/failure.dart';
 import 'package:syld_app/features/local_stores/domain/entities/city.dart';
 import 'package:syld_app/features/local_stores/domain/entities/store.dart';
 import 'package:syld_app/features/local_stores/domain/repositories/store_repository.dart';
@@ -48,7 +47,7 @@ main() {
       phone: 'phone ',
     )
   ];
-  final tFailure = NoStoresFoundFailure();
+  final tNoStores = <Store>[];
 
   group('GetStoreByCity', () {
     test(
@@ -67,16 +66,16 @@ main() {
     });
 
     test(
-        'should return [NoStoresFoundFailure]'
+        'should return empty list'
         'when no stores found by city', () async {
       // arrange
-      when(mockStoreRepository.findByCity(any)).thenAnswer((_) async => Right(<Store>[]));
+      when(mockStoreRepository.findByCity(any)).thenAnswer((_) async => Right(tNoStores));
 
       // act
       final result = await useCase(Params(city: tCityWithoutStores));
 
       // assert
-      expect(result, equals(Left(tFailure)));
+      expect(result, equals(Right(tNoStores)));
       verify(mockStoreRepository.findByCity(tCityWithoutStores));
       verifyNoMoreInteractions(mockStoreRepository);
     });
