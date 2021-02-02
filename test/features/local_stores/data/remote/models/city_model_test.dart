@@ -8,7 +8,10 @@ import '../../../../../fixtures/fixture_reader.dart';
 
 main() {
   final tCity = CityModel(name: "Wiesbaden", zipCodes: [65183]);
-  final tCityOnlyName = CityModel(name: "Mainz", zipCodes: []);
+  final tCities = [
+    CityModel(name: "Wiesbaden", zipCodes: [65183]),
+    CityModel(name: "Mainz", zipCodes: [55116]),
+  ];
 
   test('should be a subclass of City', () async {
     // assert
@@ -16,7 +19,7 @@ main() {
   });
 
   group('fromJson', () {
-    test('should return a valid model when json is also valid', () async {
+    test('should return a valid [CityModel] when json is also valid', () async {
       // arrange
       final Map<String, dynamic> jsonMap = json.decode(fixture('city.json'));
       // act
@@ -32,6 +35,17 @@ main() {
       final result = () => CityModel.fromJson(jsonMap);
       // assert
       expect(() => result(), throwsNoSuchMethodError);
+    });
+  });
+
+  group('fromJsonList', () {
+    test('should return a valid list of [CityModel] when json is also valid', () async {
+      // arrange
+      final jsonMap = json.decode(fixture('cities.json'));
+      // act
+      final result = CityModel.fromJsonList(jsonMap);
+      // assert
+      expect(result, containsAll(tCities));
     });
   });
 }

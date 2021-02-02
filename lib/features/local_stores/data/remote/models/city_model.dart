@@ -13,4 +13,8 @@ class CityModel extends City {
 
   factory CityModel.fromJson(Map<String, dynamic> json) => _$CityModelFromJson(json);
   Map<String, dynamic> toJson() => _$CityModelToJson(this);
+
+  static List<CityModel> fromJsonList(Iterable json) {
+    return List<CityModel>.from(json.map((model) => CityModel.fromJson(model)));
+  }
 }
