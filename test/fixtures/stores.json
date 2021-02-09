@@ -1,0 +1,10 @@
+[{
+  "name": "Test-Store",
+  "zipCode": 65195,
+  "thumbnailUri": "https://dummyimage.com/16:9x1080/",
+  "description": "description",
+  "address": "address",
+  "phone": "phone",
+  "email": "email",
+  "web": "google.de"
+}]
