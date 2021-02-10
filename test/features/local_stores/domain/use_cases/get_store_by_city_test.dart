@@ -19,16 +19,10 @@ main() {
 
   final tExistingCity = City(
     name: 'Test City',
-    zipCodes: [
-      123,
-      234,
-      456,
-    ],
   );
 
   final tCityWithoutStores = City(
     name: 'Empty City',
-    zipCodes: [],
   );
 
   final tStores = [

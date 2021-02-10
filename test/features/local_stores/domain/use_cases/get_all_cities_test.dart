@@ -21,11 +21,9 @@ main() {
   final tCities = [
     City(
       name: "Wiesbaden",
-      zipCodes: [65195, 65194, 65193],
     ),
     City(
       name: "Mainz",
-      zipCodes: [55128, 55116],
     )
   ];
 

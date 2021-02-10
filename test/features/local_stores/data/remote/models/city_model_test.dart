@@ -7,10 +7,10 @@ import 'package:syld_app/features/local_stores/domain/entities/city.dart';
 import '../../../../../fixtures/fixture_reader.dart';
 
 main() {
-  final tCity = CityModel(name: "Wiesbaden", zipCodes: [65183]);
+  final tCity = CityModel(name: 'Wiesbaden', id: '1');
   final tCities = [
-    CityModel(name: "Wiesbaden", zipCodes: [65183]),
-    CityModel(name: "Mainz", zipCodes: [55116]),
+    CityModel(name: 'Wiesbaden', id: '1'),
+    CityModel(name: 'Mainz', id: '2'),
   ];
 
   test('should be a subclass of City', () async {
@@ -26,15 +26,6 @@ main() {
       final result = CityModel.fromJson(jsonMap);
       // assert
       expect(result, equals(tCity));
-    });
-
-    test('should throw an [NoSuchMethodError] when json is invalid', () async {
-      // arrange
-      final Map<String, dynamic> jsonMap = json.decode(fixture('city_only_name.json'));
-      // act
-      final result = () => CityModel.fromJson(jsonMap);
-      // assert
-      expect(() => result(), throwsNoSuchMethodError);
     });
   });
 

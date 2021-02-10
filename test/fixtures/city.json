@@ -1,6 +1,5 @@
 {
-  "name": "Wiesbaden",
-  "zipCodes": [
-    65183
-  ]
+  "id":"1",
+  "createdAt":"2021-02-10T14:54:08.545Z",
+  "name":"Wiesbaden"
 }

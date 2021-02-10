@@ -7,9 +7,9 @@ part 'city_model.g.dart';
 @JsonSerializable(nullable: false)
 class CityModel extends City {
   CityModel({
+    @required String id,
     @required String name,
-    @required List<int> zipCodes,
-  }) : super(name: name, zipCodes: zipCodes);
+  }) : super(name: name, id: id);
 
   factory CityModel.fromJson(Map<String, dynamic> json) => _$CityModelFromJson(json);
   Map<String, dynamic> toJson() => _$CityModelToJson(this);

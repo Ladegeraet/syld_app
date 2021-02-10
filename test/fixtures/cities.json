@@ -1,14 +1,22 @@
 [
   {
-    "name": "Wiesbaden",
-    "zipCodes": [
-      65183
-    ]
+    "id":"1",
+    "createdAt":"2021-02-10T14:54:08.545Z",
+    "name":"Wiesbaden"
   },
   {
-    "name": "Mainz",
-    "zipCodes": [
-      55116
-    ]
+    "id":"2",
+    "createdAt":"2021-02-09T22:40:25.601Z",
+    "name":"Mainz"
+  },
+  {
+    "id":"49",
+    "createdAt":"2021-02-10T20:26:00.073Z",
+    "name":"Candidaville"
+  },
+  {
+    "id":"50",
+    "createdAt":"2021-02-10T01:14:04.368Z",
+    "name":"South Chadrickshire"
   }
 ]
